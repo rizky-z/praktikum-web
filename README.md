@@ -1,5 +1,3 @@
-# praktikum-web
+# Hey I'm Rizky :wave:
 
-Mata Kuliah Praktikum WEB
-
-Rizky Muhmmad Sofyan
+WEB practicum course
