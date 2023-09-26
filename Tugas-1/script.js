@@ -49,7 +49,7 @@ const d = 10,
 console.log(d);
 console.log(a);
 
-function jumlah()
+function operasiMatematika()
 {
     var bil1 = parseFloat(document.fform.bilangan1.value); 
     if (isNaN (bil1))
@@ -57,6 +57,25 @@ function jumlah()
     var bil2 = parseFloat(document.fform.bilangan2.value); 
     if (isNaN (bil2))
         bil2=0.0;
-    var hasil = bil1 + bil2;
-    alert ("Hasil Penjumlahan = " + hasil);
+    var operator = document.fform.operator.value;
+
+    var hasil;
+            if (operator == "+") {
+                hasil = bil1 + bil2;
+            } else if (operator == "-") {
+                hasil = bil1 - bil2;
+            } else if (operator == "*") {
+                hasil = bil1 * bil2;
+            } else if (operator == "/") {
+                if (bil2 == 0) {
+                    alert("Pembagian oleh nol tidak diizinkan.");
+                    return;
+                }
+                hasil = bil1 / bil2;
+            } else {
+                alert("Operator tidak valid.");
+                return;
+            }
+
+              alert("Hasil operasi " + operator + " adalah " + hasil);
 }
