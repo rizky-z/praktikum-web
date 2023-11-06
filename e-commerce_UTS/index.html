@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Belanja Online</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Blue E-Commerce UTS</h1>
+    </header>
+    
+    <section class="product-list">
+        <!-- Daftar Produk -->
+        <div class="product">
+            <img src="img/11promax.jpg" alt="Produk Apple">
+            <h2>Iphone 11 Pro Max</h2>
+            <p>Harga: Rp 100.000</p>
+            <button class="add-to-cart" onclick="addToCart('Iphone 11 Pro Max', 100000)">Tambah ke Keranjang</button>
+        </div>
+
+        <div class="product">
+            <img src="img/14promax.jpg" alt="Produk Apple">
+            <h2>Iphone 14 Pro Max</h2>
+            <p>Harga: Rp 150.000</p>
+            <button class="add-to-cart" onclick="addToCart('Iphone 14 Pro Max', 150000)">Tambah ke Keranjang</button>
+        </div>
+        
+        <div class="product">
+            <img src="img/xiaomi14pro.jpg" alt="Produk Xiaomi">
+            <h2>Xiaomi 14 Pro - Indonesia</h2>
+            <p>Harga: Rp 100.000</p>
+            <button class="add-to-cart" onclick="addToCart('Xiaomi 14 Pro - Indonesia', 100000)">Tambah ke Keranjang</button>
+        </div>
+
+        <div class="product">
+            <img src="img/Note12Turbo.webp" alt="Produk Xiaomi">
+            <h2>Xiaomi Note 12 Turbo</h2>
+            <p>Harga: Rp 150.000</p>
+            <button class="add-to-cart" oncslick="addToCart('Xiaomi Note 12 Turbo', 150000)">Tambah ke Keranjang</button>
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>Keranjang Belanja</h2>
+        <ul id="cart-items">
+            <!-- Item keranjang belanja akan ditampilkan di sini -->
+        </ul>
+        <h3>Total Harga: Rp <span id="total-price">0</span></h3>
+        <button class="checkout" onclick="checkout()">Checkout</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
