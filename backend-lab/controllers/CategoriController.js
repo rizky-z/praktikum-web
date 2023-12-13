@@ -2,18 +2,18 @@ import {PrismaClient} from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const getProducts = async (req, res) =>{
+export const getCategories = async (req, res) =>{
     try {
-        const response = await prisma.product.findMany();
+        const response = await prisma.categori.findMany();
         res.status(200).json(response);
     } catch (error) {
         res.status(500).json({msg: error.message});
     }
 }
 
-export const getProductById = async (req, res) =>{
+export const getCategoriById = async (req, res) =>{
     try {
-        const response = await prisma.product.findUnique({
+        const response = await prisma.categori.findUnique({
             where:{
                 id: Number(req.params.id)
             }
@@ -24,48 +24,45 @@ export const getProductById = async (req, res) =>{
     }
 }
 
-export const createProduct = async (req, res) =>{
-    const {name, price, categoryId} = req.body;
+export const createCategori = async (req, res) =>{
+    const {name} = req.body;
     try {
-        const product = await prisma.product.create({
+        const categori = await prisma.categori.create({
             data:{
-                name: name,
-                price: price,
-                categoryId: categoryId
+                name: name
             }
         });
-        res.status(201).json(product);
+        res.status(201).json(categori);
     } catch (error) {
         res.status(400).json({msg: error.message});
     }
 }
 
-export const updateProduct = async (req, res) =>{
-    const {name, price} = req.body;
+export const updateCategori = async (req, res) =>{
+    const {name} = req.body;
     try {
-        const product = await prisma.product.update({
+        const categori = await prisma.categori.update({
             where:{
                 id: Number(req.params.id)
             },
             data:{
-                name: name,
-                price: price,
+                name: name
             }
         });
-        res.status(200).json(product);
+        res.status(200).json(categori);
     } catch (error) {
         res.status(400).json({msg: error.message});
-    }
+    }     
 }
 
-export const deleteProduct = async (req, res) =>{
+export const deleteCategori = async (req, res) =>{
     try {
-        const product = await prisma.product.delete({
+        const categori = await prisma.categori.delete({
             where:{
                 id: Number(req.params.id)
             }
         });
-        res.status(200).json(product);
+        res.status(200).json(categori);
     } catch (error) {
         res.status(400).json({msg: error.message});
     }

@@ -3,19 +3,38 @@ POST http://localhost:5000/categories
 Content-Type: application/json
 
 {
-    "name": "Makanan"
+    "name": "Tool Kit"
 }
 
 ###
 GET http://localhost:5000/categories
 
 ###
+GET http://localhost:5000/categories/1
+
+###
+PATCH  http://localhost:5000/categories/3
+Content-Type: application/json
+
+{
+    "name": "Office"
+}
+
+###
+DELETE  http://localhost:5000/categories/4
+
+
+#######################################################################################################################
+#######################################################################################################################
+
+###
 POST http://localhost:5000/products
 Content-Type: application/json
 
 {
-    "name": "Product 01",
-    "price": 20000
+    "name": "tahu bulat",
+    "price": 1000,
+    "categoryId": 1
 }
 
 ###
@@ -25,13 +44,14 @@ GET http://localhost:5000/products
 GET http://localhost:5000/products/1
 
 ###
-PATCH  http://localhost:5000/products/1
+PATCH  http://localhost:5000/products/3
 Content-Type: application/json
 
 {
-    "name": "Product 02 update",
-    "price": 30000
+    "name": "tahu bulat update",
+    "price": 500
 }
 
 ###
-DELETE  http://localhost:5000/products/1
+DELETE  http://localhost:5000/products/3
+
